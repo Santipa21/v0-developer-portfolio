@@ -24,21 +24,45 @@ export function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const { t, language } = useLanguage()
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
+    const name = (formData.get("name") as string) || ""
+    const email = (formData.get("email") as string) || ""
+    const message = (formData.get("message") as string) || ""
+
+    const subject =
+      language === "es"
+        ? `Nuevo mensaje de ${name}`
+        : `New message from ${name}`
+
+    const bodyLines = [
+      language === "es" ? "Nombre:" : "Name:",
+      name,
+      "",
+      "Email:",
+      email,
+      "",
+      language === "es" ? "Mensaje:" : "Message:",
+      message,
+    ]
+
+    const body = encodeURIComponent(bodyLines.join("\n"))
+    const mailto = `mailto:santiph2000@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${body}`
+
+    window.location.href = mailto
+
     setIsSubmitting(false)
     setIsSubmitted(true)
-    
-    // Reset form
-    const form = e.target as HTMLFormElement
+
     form.reset()
-    
-    // Reset success message after 3 seconds
+
     setTimeout(() => setIsSubmitted(false), 3000)
   }
 

@@ -6,12 +6,13 @@ import { useRef } from "react"
 import { useLanguage } from "./language-provider"
 
 const techStack = [
-  { name: "React", icon: "⚛️" },
-  { name: "Next.js", icon: "▲" },
-  { name: "TypeScript", icon: "TS" },
-  { name: "Node.js", icon: "⬢" },
+  { name: "HTML5", icon: "▲" },
+  { name: "CSS", icon: "▲" },
   { name: "Tailwind", icon: "🎨" },
-  { name: "PostgreSQL", icon: "🐘" },
+  { name: "JavaScript", icon: "▲" },
+  { name: "React", icon: "▲" },
+  { name: "Next.js", icon: "▲" },
+  { name: "Node.js", icon: "⬢" },
 ]
 
 export function About() {
@@ -70,7 +71,7 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 group-hover:from-accent/30 group-hover:to-accent/10 transition-all duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-32 h-32 rounded-full bg-accent/20 flex items-center justify-center text-6xl">
-                    👨‍💻
+                    <img src="/santiago.jpg" alt="Santiago Patiño" className="w-full h-full object-cover rounded-full" />
                   </div>
                 </div>
                 <div className="absolute inset-0 border-2 border-accent/30 rounded-lg translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300" />

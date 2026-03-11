@@ -9,7 +9,7 @@ import { useLanguage } from "./language-provider"
 const experiencesData = {
   es: [
     {
-      period: "2021 — Presente",
+      period: "2021 — 2025",
       title: "Webmaster / Frontend Developer Junior",
       company: "Flare",
       companyUrl: "#",

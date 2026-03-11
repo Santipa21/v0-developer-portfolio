@@ -6,34 +6,33 @@ import { useLanguage } from "./language-provider"
 
 const technologies = {
   frontend: [
+    { name: "HTML5", icon: "</>" },
+    { name: "CSS", icon: "🎨" },
+    { name: "JavaScript", icon: "🚀" },
     { name: "React", icon: "⚛️" },
     { name: "Next.js", icon: "▲" },
-    { name: "TypeScript", icon: "TS" },
     { name: "Tailwind CSS", icon: "🎨" },
-    { name: "Framer Motion", icon: "🎬" },
-    { name: "Redux", icon: "🔄" },
   ],
   backend: [
     { name: "Node.js", icon: "⬢" },
     { name: "Express", icon: "🚀" },
     { name: "Python", icon: "🐍" },
-    { name: "GraphQL", icon: "◈" },
     { name: "REST APIs", icon: "🔌" },
-    { name: "Prisma", icon: "△" },
   ],
   databases: [
-    { name: "PostgreSQL", icon: "🐘" },
     { name: "MongoDB", icon: "🍃" },
-    { name: "Redis", icon: "🔴" },
-    { name: "Supabase", icon: "⚡" },
+    { name: "MySQL", icon: "🐬" },
   ],
   tools: [
-    { name: "Git", icon: "📦" },
+    { name: "Git", icon: "🔄" },
     { name: "Docker", icon: "🐳" },
     { name: "Vercel", icon: "▲" },
     { name: "VS Code", icon: "💻" },
     { name: "Figma", icon: "🎨" },
     { name: "Linux", icon: "🐧" },
+    { name: "GitHub", icon: "🐙" },
+    { name: "Amazon Web Services", icon: "📦" },
+    { name: "JWT", icon: "🔒" },
   ],
 }
 
