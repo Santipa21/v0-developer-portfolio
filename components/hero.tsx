@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useLanguage } from "./language-provider"
 
 const socialLinks = [
   { href: "https://github.com/Santipa21", icon: Github, label: "GitHub" },
@@ -12,6 +13,8 @@ const socialLinks = [
 ]
 
 export function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -51,7 +54,7 @@ export function Hero() {
             transition={{ duration: 0.5 }}
           >
             <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium text-accent border border-accent/30 rounded-full bg-accent/10">
-              Available for work
+              {t.hero.title}
             </span>
           </motion.div>
 
@@ -61,7 +64,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance"
           >
-            Hi, I'm{" "}
+            {t.hero.greeting}{" "}
             <span className="text-accent">Santiago Patiño</span>
           </motion.h1>
 
@@ -71,7 +74,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground mb-6"
           >
-            Frontend Developer
+            {t.hero.title}
           </motion.h2>
 
           <motion.p
@@ -80,8 +83,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty"
           >
-            I build accessible, pixel-perfect digital experiences for the web.
-            Currently focused on creating innovative solutions with modern technologies.
+            {t.hero.description}
           </motion.p>
 
           <motion.div
@@ -91,10 +93,10 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <Button asChild size="lg" className="min-w-[160px]">
-              <Link href="#projects">View Projects</Link>
+              <Link href="#projects">{t.hero.viewProjects}</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="min-w-[160px]">
-              <Link href="#contact">Contact Me</Link>
+              <Link href="#contact">{t.hero.contactMe}</Link>
             </Button>
           </motion.div>
 

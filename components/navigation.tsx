@@ -6,20 +6,23 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
-
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
-]
+import { useLanguage } from "./language-provider"
+import { LanguageSelector, LanguageSelectorMobile } from "./language-selector"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const { t } = useLanguage()
+
+  const navLinks = [
+    { href: "#about", label: t.nav.about },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#skills", label: t.nav.skills },
+    { href: "#experience", label: t.nav.experience },
+    { href: "#contact", label: t.nav.contact },
+  ]
 
   useEffect(() => {
     setMounted(true)
@@ -58,6 +61,7 @@ export function Navigation() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
             </Link>
           ))}
+          <LanguageSelector />
           {mounted && (
             <Button
               variant="ghost"
@@ -120,6 +124,7 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
+              <LanguageSelectorMobile />
             </div>
           </motion.div>
         )}

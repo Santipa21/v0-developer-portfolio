@@ -2,9 +2,10 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import { useLanguage } from "./language-provider"
 
 const technologies = {
-  Frontend: [
+  frontend: [
     { name: "React", icon: "⚛️" },
     { name: "Next.js", icon: "▲" },
     { name: "TypeScript", icon: "TS" },
@@ -12,7 +13,7 @@ const technologies = {
     { name: "Framer Motion", icon: "🎬" },
     { name: "Redux", icon: "🔄" },
   ],
-  Backend: [
+  backend: [
     { name: "Node.js", icon: "⬢" },
     { name: "Express", icon: "🚀" },
     { name: "Python", icon: "🐍" },
@@ -20,13 +21,13 @@ const technologies = {
     { name: "REST APIs", icon: "🔌" },
     { name: "Prisma", icon: "△" },
   ],
-  Databases: [
+  databases: [
     { name: "PostgreSQL", icon: "🐘" },
     { name: "MongoDB", icon: "🍃" },
     { name: "Redis", icon: "🔴" },
     { name: "Supabase", icon: "⚡" },
   ],
-  Tools: [
+  tools: [
     { name: "Git", icon: "📦" },
     { name: "Docker", icon: "🐳" },
     { name: "Vercel", icon: "▲" },
@@ -62,6 +63,14 @@ function TechCard({
 export function TechStack() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const { t } = useLanguage()
+
+  const categoryLabels: Record<string, string> = {
+    frontend: t.techStack.frontend,
+    backend: t.techStack.backend,
+    databases: t.techStack.databases,
+    tools: t.techStack.tools,
+  }
 
   return (
     <section id="skills" className="py-24 md:py-32">
@@ -74,9 +83,13 @@ export function TechStack() {
         >
           <div className="flex items-center gap-4 mb-12 max-w-4xl mx-auto">
             <span className="text-accent font-mono text-sm">03.</span>
-            <h2 className="text-3xl md:text-4xl font-bold">Tech Stack</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{t.techStack.title}</h2>
             <div className="flex-1 h-px bg-border" />
           </div>
+
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+            {t.techStack.subtitle}
+          </p>
 
           <div className="max-w-5xl mx-auto space-y-12">
             {Object.entries(technologies).map(([category, techs], categoryIndex) => (
@@ -88,7 +101,7 @@ export function TechStack() {
               >
                 <h3 className="text-lg font-semibold text-muted-foreground mb-4 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-accent" />
-                  {category}
+                  {categoryLabels[category]}
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                   {techs.map((tech, index) => (

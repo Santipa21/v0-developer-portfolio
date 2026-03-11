@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react"
+import { Github, Linkedin, Mail, Heart } from "lucide-react"
+import { useLanguage } from "./language-provider"
 
 const socialLinks = [
   { href: "https://github.com/Santipa21", icon: Github, label: "GitHub" },
@@ -9,16 +10,17 @@ const socialLinks = [
   { href: "mailto:santiph2000@gmail.com", icon: Mail, label: "Email" },
 ]
 
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
-]
-
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t } = useLanguage()
+
+  const navLinks = [
+    { href: "#about", label: t.nav.about },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#skills", label: t.nav.skills },
+    { href: "#experience", label: t.nav.experience },
+    { href: "#contact", label: t.nav.contact },
+  ]
 
   return (
     <footer className="border-t border-border bg-card/50">
@@ -33,14 +35,13 @@ export function Footer() {
               {"<Santiago />"}
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Frontend Developer creando experiencias web modernas con pasión
-              y precisión.
+              {t.footer.description}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Quick Links</h3>
+            <h3 className="font-semibold text-foreground">{t.footer.quickLinks}</h3>
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
@@ -56,7 +57,7 @@ export function Footer() {
 
           {/* Social Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Connect</h3>
+            <h3 className="font-semibold text-foreground">{t.footer.connect}</h3>
             <div className="flex gap-3">
               {socialLinks.map((link) => (
                 <Link
@@ -77,7 +78,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Santiago Patiño. All rights reserved.
+            © {currentYear} Santiago Patiño. {t.footer.rights}
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
             Built with <Heart className="w-4 h-4 text-accent" /> using Next.js & Tailwind

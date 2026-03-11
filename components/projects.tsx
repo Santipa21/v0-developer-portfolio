@@ -6,6 +6,7 @@ import useSWR from "swr"
 import { ExternalLink, Github, Star, GitFork } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
 import Link from "next/link"
+import { useLanguage } from "./language-provider"
 
 interface Repository {
   id: number
@@ -50,7 +51,7 @@ function ProjectSkeleton() {
   )
 }
 
-function ProjectCard({ repo, index }: { repo: Repository; index: number }) {
+function ProjectCard({ repo, index, noDescription }: { repo: Repository; index: number; noDescription: string }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
@@ -94,7 +95,7 @@ function ProjectCard({ repo, index }: { repo: Repository; index: number }) {
       </div>
 
       <p className="text-sm text-muted-foreground mb-4 line-clamp-2 leading-relaxed">
-        {repo.description || "No description available"}
+        {repo.description || noDescription}
       </p>
 
       {repo.topics && repo.topics.length > 0 && (
@@ -139,6 +140,7 @@ function ProjectCard({ repo, index }: { repo: Repository; index: number }) {
 export function Projects() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const { t } = useLanguage()
   
   const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME || "Santipa21"
   const { data: repos, error, isLoading } = useSWR<Repository[]>(
@@ -161,18 +163,17 @@ export function Projects() {
         >
           <div className="flex items-center gap-4 mb-12 max-w-4xl mx-auto">
             <span className="text-accent font-mono text-sm">02.</span>
-            <h2 className="text-3xl md:text-4xl font-bold">Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{t.projects.title}</h2>
             <div className="flex-1 h-px bg-border" />
           </div>
 
           <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
-            Here are some of my recent projects from GitHub. Each one represents
-            a unique challenge and learning experience.
+            {t.projects.subtitle}
           </p>
 
           {error && (
             <div className="text-center text-muted-foreground">
-              Failed to load projects. Please try again later.
+              {t.projects.error}
             </div>
           )}
 
@@ -188,7 +189,7 @@ export function Projects() {
               </>
             )}
             {repos?.map((repo, index) => (
-              <ProjectCard key={repo.id} repo={repo} index={index} />
+              <ProjectCard key={repo.id} repo={repo} index={index} noDescription={t.projects.noDescription} />
             ))}
           </div>
 
@@ -199,7 +200,7 @@ export function Projects() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-accent hover:underline"
             >
-              View more on GitHub
+              {t.projects.viewCode} GitHub
               <ExternalLink className="w-4 h-4" />
             </Link>
           </div>

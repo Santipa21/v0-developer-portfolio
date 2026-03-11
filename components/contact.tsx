@@ -6,9 +6,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
-import { Mail, Send, Github, Linkedin, Twitter } from "lucide-react"
+import { Mail, Send, Github, Linkedin } from "lucide-react"
 import Link from "next/link"
 import { Spinner } from "@/components/ui/spinner"
+import { useLanguage } from "./language-provider"
 
 const socialLinks = [
   { href: "https://github.com/Santipa21", icon: Github, label: "GitHub" },
@@ -21,6 +22,7 @@ export function Contact() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const { t, language } = useLanguage()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -40,6 +42,12 @@ export function Contact() {
     setTimeout(() => setIsSubmitted(false), 3000)
   }
 
+  const successMessage = language === "es" 
+    ? "Gracias! Te responderé pronto." 
+    : "Thank you! I'll get back to you soon."
+
+  const messageSent = language === "es" ? "Mensaje Enviado!" : "Message Sent!"
+
   return (
     <section id="contact" className="py-24 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
@@ -52,7 +60,7 @@ export function Contact() {
         >
           <div className="flex items-center gap-4 mb-12">
             <span className="text-accent font-mono text-sm">05.</span>
-            <h2 className="text-3xl md:text-4xl font-bold">Get In Touch</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{t.contact.title}</h2>
             <div className="flex-1 h-px bg-border" />
           </div>
 
@@ -65,13 +73,11 @@ export function Contact() {
               className="space-y-6"
             >
               <p className="text-muted-foreground leading-relaxed">
-                I'm currently open to new opportunities and always interested in 
-                hearing about exciting projects. Whether you have a question, a 
-                project idea, or just want to say hello, feel free to reach out!
+                {t.contact.description}
               </p>
 
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Connect with me</h3>
+                <h3 className="text-lg font-semibold">{t.contact.orConnect}</h3>
                 <div className="flex flex-wrap gap-3">
                   {socialLinks.map((link) => (
                     <Link
@@ -89,7 +95,7 @@ export function Contact() {
               </div>
 
               <div className="p-6 rounded-lg border border-border bg-card">
-                <p className="text-sm text-muted-foreground mb-2">Email me at</p>
+                <p className="text-sm text-muted-foreground mb-2">{t.contact.emailMe}</p>
                 <Link
                   href="mailto:santiph2000@gmail.com"
                   className="text-accent hover:underline font-mono"
@@ -108,34 +114,34 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <FieldGroup>
                   <Field>
-                    <FieldLabel htmlFor="name">Name</FieldLabel>
+                    <FieldLabel htmlFor="name">{t.contact.nameLabel}</FieldLabel>
                     <Input
                       id="name"
                       name="name"
-                      placeholder="Your name"
+                      placeholder={t.contact.namePlaceholder}
                       required
                       className="bg-card"
                     />
                   </Field>
 
                   <Field>
-                    <FieldLabel htmlFor="email">Email</FieldLabel>
+                    <FieldLabel htmlFor="email">{t.contact.emailLabel}</FieldLabel>
                     <Input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="your@email.com"
+                      placeholder={t.contact.emailPlaceholder}
                       required
                       className="bg-card"
                     />
                   </Field>
 
                   <Field>
-                    <FieldLabel htmlFor="message">Message</FieldLabel>
+                    <FieldLabel htmlFor="message">{t.contact.messageLabel}</FieldLabel>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Your message..."
+                      placeholder={t.contact.messagePlaceholder}
                       rows={5}
                       required
                       className="bg-card resize-none"
@@ -151,13 +157,13 @@ export function Contact() {
                   {isSubmitting ? (
                     <>
                       <Spinner className="mr-2" />
-                      Sending...
+                      {t.contact.sending}
                     </>
                   ) : isSubmitted ? (
-                    "Message Sent!"
+                    messageSent
                   ) : (
                     <>
-                      Send Message
+                      {t.contact.send}
                       <Send className="ml-2 w-4 h-4" />
                     </>
                   )}
@@ -169,7 +175,7 @@ export function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-center text-sm text-accent"
                   >
-                    Thank you! I'll get back to you soon.
+                    {successMessage}
                   </motion.p>
                 )}
               </form>

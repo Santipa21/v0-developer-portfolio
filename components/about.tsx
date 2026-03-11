@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
+import { useLanguage } from "./language-provider"
 
 const techStack = [
   { name: "React", icon: "⚛️" },
@@ -16,6 +17,7 @@ const techStack = [
 export function About() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const { t } = useLanguage()
 
   return (
     <section id="about" className="py-24 md:py-32">
@@ -29,28 +31,17 @@ export function About() {
         >
           <div className="flex items-center gap-4 mb-12">
             <span className="text-accent font-mono text-sm">01.</span>
-            <h2 className="text-3xl md:text-4xl font-bold">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">{t.about.title}</h2>
             <div className="flex-1 h-px bg-border" />
           </div>
 
           <div className="grid md:grid-cols-3 gap-12">
             <div className="md:col-span-2 space-y-6">
               <p className="text-muted-foreground leading-relaxed">
-                Hola! Soy Santiago Patiño, un Frontend Developer apasionado por crear 
-                experiencias web elegantes y centradas en el usuario. Mi viaje en el 
-                desarrollo web comenzó hace varios años, y desde entonces he tenido el 
-                privilegio de trabajar en diversos proyectos que han dado forma a mis 
-                habilidades y perspectiva.
+                {t.about.paragraph1}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Me especializo en construir aplicaciones web modernas usando React, 
-                Next.js y TypeScript. Estoy particularmente interesado en crear 
-                aplicaciones accesibles y de alto rendimiento que brinden experiencias 
-                de usuario excepcionales. Cuando no estoy programando, me encuentro 
-                explorando nuevas tecnologías y contribuyendo a proyectos open-source.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Here are some technologies I've been working with recently:
+                {t.about.paragraph2}
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4">
