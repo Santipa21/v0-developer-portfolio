@@ -9,78 +9,42 @@ import { useLanguage } from "./language-provider"
 const experiencesData = {
   es: [
     {
-      period: "2024 — Presente",
-      title: "Frontend Developer Senior",
-      company: "Empresa Tech",
+      period: "2021 — Presente",
+      title: "Webmaster / Frontend Developer Junior",
+      company: "Flare",
       companyUrl: "#",
       description:
-        "Construyendo y manteniendo aplicaciones web escalables usando React, Next.js y Node.js. Liderando decisiones de arquitectura frontend y mentoreando desarrolladores junior.",
-      technologies: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-    },
-    {
-      period: "2022 — 2024",
-      title: "Frontend Developer",
-      company: "Startup Inc",
-      companyUrl: "#",
-      description:
-        "Desarrollé y lancé múltiples funcionalidades para una plataforma SaaS que sirve a miles de usuarios. Implementé pipelines CI/CD y mejoré el rendimiento de la aplicación en un 40%.",
-      technologies: ["React", "Python", "Django", "AWS", "Docker"],
-    },
-    {
-      period: "2021 — 2022",
-      title: "Frontend Developer Jr",
-      company: "Agencia Digital",
-      companyUrl: "#",
-      description:
-        "Creé interfaces web responsivas y accesibles para varios clientes. Colaboré estrechamente con diseñadores para implementar diseños pixel-perfect.",
-      technologies: ["JavaScript", "React", "Tailwind CSS", "Figma"],
+        "Diseño y desarrollo de email templates optimizados para diferentes dispositivos. Maquetación de landing pages atractivas y funcionales orientadas a conversión de leads. Gestión y actualización de contenidos a través de CMS. Planificación, segmentación y ejecución de campañas de email marketing con envíos masivos efectivos. Implementación de automatizaciones que optimizan procesos y reducen tiempos de ejecución. Desarrollo Front-End utilizando HTML5, CSS3, JavaScript y Tailwind.",
+      technologies: ["JavaScript", "Emarsys", "AWS", "HubSpot", "WordPress", "AI", "React", "PHP"],
     },
     {
       period: "2020 — 2021",
-      title: "Desarrollador Junior",
-      company: "Estudio Web",
+      title: "Webmaster",
+      company: "Destiny CO SAS",
       companyUrl: "#",
       description:
-        "Inicié mi carrera profesional construyendo sitios web y aprendiendo prácticas modernas de desarrollo. Contribuí a múltiples proyectos de clientes mientras desarrollaba habilidades fundamentales.",
-      technologies: ["HTML", "CSS", "JavaScript", "WordPress"],
+        "Diseño y envío de piezas de email marketing orientadas a comunicación efectiva y engagement. Actualización y gestión de briefs, asegurando claridad y alineación con los objetivos del proyecto. Carga, organización y depuración de bases de datos para campañas digitales. Implementación de automatizaciones que optimizaron procesos internos y mejoraron la eficiencia.",
+      technologies: ["HTML", "CSS", "JavaScript", "Salesforce Marketing Cloud", "Responsys", "HubSpot", "Photoshop", "Illustrator"],
     },
   ],
   en: [
     {
-      period: "2024 — Present",
-      title: "Senior Frontend Developer",
-      company: "Tech Company",
+      period: "2021 — Present",
+      title: "Webmaster / Junior Frontend Developer",
+      company: "Flare",
       companyUrl: "#",
       description:
-        "Building and maintaining scalable web applications using React, Next.js, and Node.js. Leading frontend architecture decisions and mentoring junior developers.",
-      technologies: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-    },
-    {
-      period: "2022 — 2024",
-      title: "Frontend Developer",
-      company: "Startup Inc",
-      companyUrl: "#",
-      description:
-        "Developed and shipped multiple features for a SaaS platform serving thousands of users. Implemented CI/CD pipelines and improved application performance by 40%.",
-      technologies: ["React", "Python", "Django", "AWS", "Docker"],
-    },
-    {
-      period: "2021 — 2022",
-      title: "Junior Frontend Developer",
-      company: "Digital Agency",
-      companyUrl: "#",
-      description:
-        "Created responsive and accessible web interfaces for various clients. Collaborated closely with designers to implement pixel-perfect designs.",
-      technologies: ["JavaScript", "React", "Tailwind CSS", "Figma"],
+        "Design and development of email templates optimized for different devices. Layout of attractive and functional landing pages focused on lead conversion. Content management and updates through CMS. Planning, segmentation, and execution of email marketing campaigns with effective mass mailings. Implementation of automations that optimize processes and reduce execution times. Front-End development using HTML5, CSS3, JavaScript, and Tailwind.",
+      technologies: ["JavaScript", "Emarsys", "AWS", "HubSpot", "WordPress", "AI", "React", "PHP"],
     },
     {
       period: "2020 — 2021",
-      title: "Junior Developer",
-      company: "Web Studio",
+      title: "Webmaster",
+      company: "Destiny CO SAS",
       companyUrl: "#",
       description:
-        "Started my professional journey building websites and learning modern development practices. Contributed to multiple client projects while developing core skills.",
-      technologies: ["HTML", "CSS", "JavaScript", "WordPress"],
+        "Design and sending of email marketing pieces focused on effective communication and engagement. Updating and managing briefs, ensuring clarity and alignment with project objectives. Loading, organizing, and cleaning databases for digital campaigns. Implementation of automations that optimized internal processes and improved efficiency.",
+      technologies: ["HTML", "CSS", "JavaScript", "Salesforce Marketing Cloud", "Responsys", "HubSpot", "Photoshop", "Illustrator"],
     },
   ],
 }
