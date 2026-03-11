@@ -140,7 +140,7 @@ export function Projects() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
   
-  const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME || "vercel"
+  const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME || "Santipa21"
   const { data: repos, error, isLoading } = useSWR<Repository[]>(
     `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`,
     fetcher,

@@ -15,21 +15,21 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Developer Portfolio | Full Stack Developer',
-  description: 'Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js. View my projects, skills, and experience.',
+  title: 'Santiago Patiño | Frontend Developer',
+  description: 'Frontend Developer especializado en React, Next.js, TypeScript y desarrollo web moderno. Explora mis proyectos, habilidades y experiencia.',
   generator: 'Next.js',
-  keywords: ['developer', 'portfolio', 'full stack', 'react', 'nextjs', 'typescript'],
-  authors: [{ name: 'Developer' }],
+  keywords: ['santiago patiño', 'frontend developer', 'portfolio', 'react', 'nextjs', 'typescript'],
+  authors: [{ name: 'Santiago Patiño' }],
   openGraph: {
     type: 'website',
-    title: 'Developer Portfolio | Full Stack Developer',
-    description: 'Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js.',
-    siteName: 'Developer Portfolio',
+    title: 'Santiago Patiño | Frontend Developer',
+    description: 'Frontend Developer especializado en React, Next.js, TypeScript y desarrollo web moderno.',
+    siteName: 'Santiago Patiño Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Developer Portfolio | Full Stack Developer',
-    description: 'Full Stack Developer specializing in React, Next.js, TypeScript, and Node.js.',
+    title: 'Santiago Patiño | Frontend Developer',
+    description: 'Frontend Developer especializado en React, Next.js, TypeScript y desarrollo web moderno.',
   },
   icons: {
     icon: [

@@ -36,17 +36,18 @@ export function About() {
           <div className="grid md:grid-cols-3 gap-12">
             <div className="md:col-span-2 space-y-6">
               <p className="text-muted-foreground leading-relaxed">
-                Hello! I'm a passionate Full Stack Developer with a love for creating 
-                elegant, user-friendly web applications. My journey in web development 
-                started several years ago, and since then I've had the privilege of 
-                working on diverse projects that have shaped my skills and perspective.
+                Hola! Soy Santiago Patiño, un Frontend Developer apasionado por crear 
+                experiencias web elegantes y centradas en el usuario. Mi viaje en el 
+                desarrollo web comenzó hace varios años, y desde entonces he tenido el 
+                privilegio de trabajar en diversos proyectos que han dado forma a mis 
+                habilidades y perspectiva.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I specialize in building modern web applications using React, Next.js, 
-                and Node.js. I'm particularly interested in creating accessible, 
-                performant applications that provide exceptional user experiences. 
-                When I'm not coding, you can find me exploring new technologies, 
-                contributing to open-source projects, or writing technical articles.
+                Me especializo en construir aplicaciones web modernas usando React, 
+                Next.js y TypeScript. Estoy particularmente interesado en crear 
+                aplicaciones accesibles y de alto rendimiento que brinden experiencias 
+                de usuario excepcionales. Cuando no estoy programando, me encuentro 
+                explorando nuevas tecnologías y contribuyendo a proyectos open-source.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Here are some technologies I've been working with recently:

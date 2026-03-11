@@ -43,7 +43,7 @@ export function Navigation() {
           href="/"
           className="text-xl font-bold tracking-tight text-foreground hover:text-accent transition-colors"
         >
-          {"<Dev />"}
+          {"<Santiago />"}
         </Link>
 
         {/* Desktop Navigation */}

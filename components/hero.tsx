@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 const socialLinks = [
-  { href: "https://github.com", icon: Github, label: "GitHub" },
-  { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-  { href: "mailto:hello@example.com", icon: Mail, label: "Email" },
+  { href: "https://github.com/Santipa21", icon: Github, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/santiago-pati%C3%B1o-994bb8206/", icon: Linkedin, label: "LinkedIn" },
+  { href: "mailto:santiph2000@gmail.com", icon: Mail, label: "Email" },
 ]
 
 export function Hero() {
@@ -62,7 +62,7 @@ export function Hero() {
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance"
           >
             Hi, I'm{" "}
-            <span className="text-accent">John Doe</span>
+            <span className="text-accent">Santiago Patiño</span>
           </motion.h1>
 
           <motion.h2
@@ -71,7 +71,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground mb-6"
           >
-            Full Stack Developer
+            Frontend Developer
           </motion.h2>
 
           <motion.p

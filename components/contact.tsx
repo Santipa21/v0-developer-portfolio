@@ -11,10 +11,9 @@ import Link from "next/link"
 import { Spinner } from "@/components/ui/spinner"
 
 const socialLinks = [
-  { href: "https://github.com", icon: Github, label: "GitHub" },
-  { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://twitter.com", icon: Twitter, label: "Twitter" },
-  { href: "mailto:hello@example.com", icon: Mail, label: "Email" },
+  { href: "https://github.com/Santipa21", icon: Github, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/santiago-pati%C3%B1o-994bb8206/", icon: Linkedin, label: "LinkedIn" },
+  { href: "mailto:santiph2000@gmail.com", icon: Mail, label: "Email" },
 ]
 
 export function Contact() {
@@ -92,10 +91,10 @@ export function Contact() {
               <div className="p-6 rounded-lg border border-border bg-card">
                 <p className="text-sm text-muted-foreground mb-2">Email me at</p>
                 <Link
-                  href="mailto:hello@example.com"
+                  href="mailto:santiph2000@gmail.com"
                   className="text-accent hover:underline font-mono"
                 >
-                  hello@example.com
+                  santiph2000@gmail.com
                 </Link>
               </div>
             </motion.div>

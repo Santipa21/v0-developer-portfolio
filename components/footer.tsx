@@ -4,10 +4,9 @@ import Link from "next/link"
 import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react"
 
 const socialLinks = [
-  { href: "https://github.com", icon: Github, label: "GitHub" },
-  { href: "https://linkedin.com", icon: Linkedin, label: "LinkedIn" },
-  { href: "https://twitter.com", icon: Twitter, label: "Twitter" },
-  { href: "mailto:hello@example.com", icon: Mail, label: "Email" },
+  { href: "https://github.com/Santipa21", icon: Github, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/santiago-pati%C3%B1o-994bb8206/", icon: Linkedin, label: "LinkedIn" },
+  { href: "mailto:santiph2000@gmail.com", icon: Mail, label: "Email" },
 ]
 
 const navLinks = [
@@ -31,11 +30,11 @@ export function Footer() {
               href="/"
               className="text-xl font-bold tracking-tight text-foreground"
             >
-              {"<Dev />"}
+              {"<Santiago />"}
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Full Stack Developer building modern web experiences with passion
-              and precision.
+              Frontend Developer creando experiencias web modernas con pasión
+              y precisión.
             </p>
           </div>
 
@@ -78,7 +77,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} John Doe. All rights reserved.
+            © {currentYear} Santiago Patiño. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
             Built with <Heart className="w-4 h-4 text-accent" /> using Next.js & Tailwind
